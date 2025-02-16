@@ -4,6 +4,14 @@ import { Navbar } from './components/Navbar';
 import { AudioPlayer } from './components/AudioPlayer';
 import { AudioGrid } from './components/AudioGrid';
 import { useStore } from './store/useStore';
+import Image1 from './components/assets/image1.png'
+import Image2 from './components/assets/image2.png'
+import Image3 from './components/assets/image3.png'
+import Image4 from './components/assets/image4.png'
+import Image5 from './components/assets/image5.png'
+import Image6 from './components/assets/image6.png'
+import Image7 from './components/assets/image7.png'
+
 
 // Sample data for demonstration
 const sampleContents = [
@@ -11,7 +19,7 @@ const sampleContents = [
     id: '1',
     title: 'The Psychology of Money',
     description: 'Timeless lessons on wealth, greed, and happiness. Learn how to better manage your money and make smarter financial decisions.',
-    cover_image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=500',
+    cover_image: Image4,
     audio_url: 'https://example.com/audio1.mp3',
     duration: 7200, // 2 hours
     creator_id: 'creator1',
@@ -22,52 +30,52 @@ const sampleContents = [
   },
   {
     id: '2',
-    title: 'Mindfulness Meditation',
+    title: 'Rich Dad Poor Dad',
     description: 'Daily guided meditation sessions to help you reduce stress, improve focus, and find inner peace.',
-    cover_image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500',
+    cover_image: Image7,
     audio_url: 'https://example.com/audio2.mp3',
     duration: 1800, // 30 minutes
     creator_id: 'creator2',
-    category: 'meditation',
+    category: 'Finance',
     type: 'podcast',
     created_at: '2024-02-28T12:00:00Z',
     updated_at: '2024-02-28T12:00:00Z'
   },
   {
     id: '3',
-    title: 'The Art of Leadership',
+    title: 'The Wings Of Fire',
     description: 'Learn essential leadership skills from top executives and management experts around the world.',
-    cover_image: 'https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=500',
+    cover_image: Image6,
     audio_url: 'https://example.com/audio3.mp3',
     duration: 5400, // 1.5 hours
     creator_id: 'creator3',
-    category: 'business',
+    category: 'Auto-Biography',
     type: 'audiobook',
     created_at: '2024-02-28T12:00:00Z',
     updated_at: '2024-02-28T12:00:00Z'
   },
   {
     id: '4',
-    title: 'Tech Talk Weekly',
+    title: 'Why I Am An Atheist',
     description: 'Stay up to date with the latest technology trends, news, and innovations in the tech industry.',
-    cover_image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=500',
+    cover_image: Image5,
     audio_url: 'https://example.com/audio4.mp3',
     duration: 3600, // 1 hour
     creator_id: 'creator4',
-    category: 'technology',
+    category: 'Biography',
     type: 'podcast',
     created_at: '2024-02-28T12:00:00Z',
     updated_at: '2024-02-28T12:00:00Z'
   },
   {
     id: '5',
-    title: 'Healthy Living Guide',
+    title: 'Metamorphosis',
     description: 'Expert advice on nutrition, exercise, and maintaining a healthy lifestyle for optimal wellbeing.',
-    cover_image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500',
+    cover_image: Image2,
     audio_url: 'https://example.com/audio5.mp3',
     duration: 4500, // 1.25 hours
     creator_id: 'creator5',
-    category: 'health',
+    category: 'novel',
     type: 'audiobook',
     created_at: '2024-02-28T12:00:00Z',
     updated_at: '2024-02-28T12:00:00Z'
