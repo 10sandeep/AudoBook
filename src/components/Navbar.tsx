@@ -9,80 +9,81 @@ export function Navbar() {
   const { darkMode, toggleDarkMode, user } = useStore();
 
   return (
-    <nav className="fixed top-0 w-full bg-white dark:bg-secondary shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-1">
-            <img src={Logo} alt="Logo" className="h-8 w-9" />
-            <span className="text-2xl font-bold text-primary text-pink-800">
-              <span className="text-slate-400">Audo</span>Book
-            </span>
-          </Link>
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[85%] lg:w-[80%] 
+      bg-white/10 dark:bg-black/10 backdrop-blur-lg border border-white/30 dark:border-gray-700 
+      shadow-lg rounded-full px-6 py-2 z-50 transition-all">
+      
+      <div className="flex justify-between items-center h-16">
 
-          {/* Download App Button with Play Store Icon */}
-          <div className="-m-20 flex items-center">
-            <button className="flex items-center space-x-2 border border-pink-700 px-4 py-2 rounded-full font-semibold text-pink-700">
-              <img src={PlayStore} alt="Play Store" className="h-6 w-6" />
-              <span>DOWNLOAD APP</span>
-            </button>
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-2">
+          <img src={Logo} alt="Logo" className="h-10 w-12 drop-shadow-md" />
+          <span className="text-2xl font-extrabold text-gray-800 dark:text-white">
+            <span className="text-pink-500">Audo</span>Book
+          </span>
+        </Link>
+
+        {/* Search Bar */}
+        <div className="hidden md:flex flex-1 max-w-md mx-6">
+          <div className="relative w-full">
+            <input
+              type="text"
+              placeholder="Search audiobooks & podcasts..."
+              className="w-full px-4 py-2 pl-10 rounded-full bg-white/20 dark:bg-black/20 
+              text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-pink-500 
+              shadow-md placeholder-gray-500 dark:placeholder-gray-400 transition-all"
+            />
+            <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-500 dark:text-gray-300" />
           </div>
+        </div>
 
-          {/* Search Bar */}
-          <div className="flex-1 max-w-md mx-10">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search audiobooks and podcasts..."
-                className="w-full px-4 py-2 rounded-full bg-secondary/100 dark:bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <Search className="absolute right-3 top-2.5 h-5 w-5 text-foreground/60" />
-            </div>
-          </div>
+        {/* Action Buttons */}
+        <div className="flex items-center space-x-4">
 
-          {/* Free Trial Button */}
-          <div className="-m-20">
-            <button className="px-4 py-2 m-2 rounded-full bg-pink-700 text-white font-serif font-bold">
-              FREE TRIAL
-            </button>
-          </div>
+          {/* Download App */}
+          <button className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-pink-700 
+            text-white px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-all duration-300">
+            <img src={PlayStore} alt="Play Store" className="h-6 w-6" />
+            <span className="font-semibold">Download App</span>
+          </button>
 
-          {/* Dark Mode Toggle & User Profile/Login */}
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-secondary/50 dark:hover:bg-background/50"
-            >
-              {darkMode ? (
-                <Sun className="h-5 w-5 text-foreground/60" />
-              ) : (
-                <Moon className="h-5 w-5 text-foreground/60" />
-              )}
-            </button>
+          {/* Free Trial */}
+          <button className="px-5 py-2 bg-pink-700 text-white font-bold rounded-full shadow-md 
+            hover:bg-pink-800 transition-all duration-300">
+            Free Trial
+          </button>
 
-            {user ? (
-              <Link
-                to="/profile"
-                className="flex items-center space-x-2 p-2 rounded-full hover:bg-secondary/50 dark:hover:bg-background/50"
-              >
-                <img
-                  src={user.avatar_url || 'https://via.placeholder.com/32'}
-                  alt={user.full_name}
-                  className="h-8 w-8 rounded-full"
-                />
-              </Link>
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full hover:bg-white/20 dark:hover:bg-gray-700 transition-all"
+          >
+            {darkMode ? (
+              <Sun className="h-6 w-6 text-yellow-400" />
             ) : (
-              <Link
-                to="/login"
-                className="flex items-center space-x-2 p-2 rounded-full hover:bg-secondary/50 dark:hover:bg-background/50"
-              >
-                <User className="h-5 w-5 text-foreground/60" />
-                <span className="text-sm font-medium text-slate-500">
-                  Sign In
-                </span>
-              </Link>
+              <Moon className="h-6 w-6 text-gray-500 dark:text-white" />
             )}
-          </div>
+          </button>
+
+          {/* User Profile/Login */}
+          {user ? (
+            <Link to="/profile" className="flex items-center space-x-2">
+              <img
+                src={user.avatar_url || 'https://via.placeholder.com/32'}
+                alt={user.full_name}
+                className="h-9 w-9 rounded-full border-2 border-pink-500 shadow-md"
+              />
+            </Link>
+          ) : (
+            <Link
+              to="/login"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-800 dark:text-white 
+              font-medium rounded-full hover:bg-white/20 dark:hover:bg-gray-700 transition-all"
+            >
+              <User className="h-6 w-6 text-gray-500 dark:text-white" />
+              <span>Sign In</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

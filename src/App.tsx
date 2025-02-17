@@ -11,6 +11,9 @@ import Image4 from './components/assets/image4.png'
 import Image5 from './components/assets/image5.png'
 import Image6 from './components/assets/image6.png'
 import Image7 from './components/assets/image7.png'
+import InfiniteScrollGallery from './components/InfiniteScrollGallery';
+import Banner from './components/Banner';
+import Footer from './components/Footer';
 
 
 // Sample data for demonstration
@@ -90,19 +93,26 @@ function App() {
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
         <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
           <Navbar />
-          <main className="pt-16 pb-24">
+          <div className="pt-20">
+  <InfiniteScrollGallery />
+</div>
+
+          <main className="pt-10 pb-6 mt-[-10px]">
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+            <Banner/>
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
           </main>
-        
+       
           <AudioPlayer />
+          <Footer/>
         </div>
       </div>
     </Router>
+    
   );
 }
 

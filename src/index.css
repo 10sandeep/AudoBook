@@ -31,3 +31,27 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes glowing-shadow {
+  0% { filter: drop-shadow(0 0 20px rgba(255, 0, 150, 0.8)); }
+  25% { filter: drop-shadow(0 0 30px rgba(0, 255, 200, 0.8)); }
+  50% { filter: drop-shadow(0 0 40px rgba(255, 165, 0, 0.8)); }
+  75% { filter: drop-shadow(0 0 30px rgba(0, 150, 255, 0.8)); }
+  100% { filter: drop-shadow(0 0 20px rgba(255, 0, 150, 0.8)); }
+}
+
+.animate-shadow-glow {
+  animation: glowing-shadow 4s infinite alternate ease-in-out;
+}
+
+@keyframes glow-border {
+  0% { border-color: red; }
+  25% { border-color: yellow; }
+  50% { border-color: green; }
+  75% { border-color: blue; }
+  100% { border-color: red; }
+}
+
+.animate-glow-border {
+  animation: glow-border 4s linear infinite;
+}
+
