@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
 
       {/* Copyright & Social Links */}
       <div className="text-center font-poppins font-bold mt-8 text-sm text-gray-600 dark:text-gray-400">
-        <p>&copy; 2025 AudioBook @ All Rights Reserved</p>
+        <p>&copy; 2025 AudoBook @ All Rights Reserved</p>
       </div>
 
       <div className="flex justify-center space-x-6 mt-4">

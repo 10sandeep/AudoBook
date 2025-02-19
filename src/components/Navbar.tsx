@@ -74,7 +74,7 @@ export function Navbar() {
               <img src={user.avatar_url || 'https://via.placeholder.com/32'} alt={user.full_name} className="h-9 w-9 rounded-full border-2 border-pink-500" />
             </Link>
           ) : (
-            <Link to="/login" className="px-3 py-2 text-gray-800 dark:text-white font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+            <Link to="/signin" className="px-3 py-2 text-gray-800 dark:text-white font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
               <User className="h-6 w-6" />
             </Link>
           )}

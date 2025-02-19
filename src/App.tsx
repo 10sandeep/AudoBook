@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { AudioPlayer } from './components/AudioPlayer';
 import { AudioGrid } from './components/AudioGrid';
@@ -14,6 +14,8 @@ import Image7 from './components/assets/image7.png'
 import InfiniteScrollGallery from './components/InfiniteScrollGallery';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
+import { SignIn } from './components/SignIn';
+import { SignUp } from './components/SignUp';
 
 
 // Sample data for demonstration
@@ -93,6 +95,11 @@ function App() {
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
         <div className="bg-gray-50 dark:bg-black min-h-screen">
           <Navbar />
+          <Routes>
+            
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
           <div className="pt-20">
   <InfiniteScrollGallery />
 </div>
@@ -111,7 +118,9 @@ function App() {
           <Footer/>
         </div>
       </div>
+      
     </Router>
+    
   );
 }
 
