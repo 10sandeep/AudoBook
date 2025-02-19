@@ -14,6 +14,13 @@ export default {
         accent: 'hsl(var(--accent))',
         'accent-foreground': 'hsl(var(--accent-foreground))',
       },
+      fontFamily:{
+        anton:["Anton"],
+        rubik :["Rubik Mono One"],
+        targerine:["Tangerine"],
+        oxygen:["Oxygen Mono"],
+        poppins:["Poppins"],
+      }
     },
   },
   plugins: [],

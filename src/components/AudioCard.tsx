@@ -26,7 +26,7 @@ export function AudioCard({ content }: AudioCardProps) {
       bg-white/10  dark:bg-white/10 backdrop-blur-lg border border-white/20 dark:border-white/10">
       
       {/* Cover Image */}
-      <div className="relative aspect-square">
+      <div className="relative aspect-auto">
         <img
           src={content.cover_image}
           alt={content.title}
@@ -45,10 +45,10 @@ export function AudioCard({ content }: AudioCardProps) {
       
       {/* Card Content */}
       <div className="p-4">
-        <h3 className="font-semibold text-foreground mb-1 line-clamp-1">
+        <h3 className="font-poppins font-semibold text-foreground mb-1 line-clamp-1">
           {content.title}
         </h3>
-        <p className="text-sm text-foreground/70 mb-1 line-clamp-2">
+        <p className="font-poppins text-sm text-foreground/70 mb-1 line-clamp-2">
           {content.description}
         </p>
         <div className="flex items-center justify-between text-sm text-foreground/60">

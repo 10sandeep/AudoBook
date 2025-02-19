@@ -91,13 +91,13 @@ function App() {
   return (
     <Router>
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-        <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+        <div className="bg-gray-50 dark:bg-black min-h-screen">
           <Navbar />
           <div className="pt-20">
   <InfiniteScrollGallery />
 </div>
 
-          <main className="pt-10 pb-6 mt-[-10px]">
+          <main className="font-poppins  pt-10 pb-6 mt-[-10px]">
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
             <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
@@ -112,7 +112,6 @@ function App() {
         </div>
       </div>
     </Router>
-    
   );
 }
 
