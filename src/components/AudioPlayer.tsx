@@ -13,6 +13,7 @@ export function AudioPlayer() {
     setIsPlaying,
     setVolume,
     setPlaybackSpeed,
+    darkMode,
   } = useStore();
 
   const [isVisible, setIsVisible] = useState(false);
@@ -67,9 +68,9 @@ export function AudioPlayer() {
   if (!currentAudio || !isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[700px] 
+    <div className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[700px] 
       bg-gradient-to-r from-blue-600/30 to-blue-400/20 backdrop-blur-xl shadow-lg 
-      border border-blue-400/40 rounded-2xl p-4 flex flex-col items-center transition-all duration-300">
+      border border-blue-400/40 rounded-2xl p-4 flex flex-col items-center transition-all duration-300`}>
       
       {/* Audio Info */}
       <div className="flex w-full items-center justify-between">
@@ -148,17 +149,21 @@ export function AudioPlayer() {
             className="w-20 accent-blue-500"
           />
         </div>
+
+        {/* Playback Speed Dropdown */}
         <div className="flex items-center space-x-2">
           <Settings className="h-5 w-5 text-white" />
           <select
             value={playbackSpeed}
             onChange={(e) => setPlaybackSpeed(parseFloat(e.target.value))}
-            className="bg-transparent text-white focus:outline-none"
+            className={`bg-transparent text-black border-gray-600 focus:outline-none p-1 rounded-md border ${
+              darkMode ? "bg-gray-800 border-gray-600" : "bg-white border-gray-300 text-black"
+            }`}
           >
-            <option value="0.5">0.5x</option>
-            <option value="1">1x</option>
-            <option value="1.5">1.5x</option>
-            <option value="2">2x</option>
+            <option className={`${darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-black"}`} value="0.5">0.5x</option>
+            <option className={`${darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-black"}`} value="1">1x</option>
+            <option className={`${darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-black"}`} value="1.5">1.5x</option>
+            <option className={`${darkMode ? "bg-gray-700 text-white" : "bg-gray-100 text-black"}`} value="2">2x</option>
           </select>
         </div>
       </div>

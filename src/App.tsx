@@ -87,6 +87,25 @@ const sampleContents = [
   }
 ];
 
+const Home = () => {
+  return (
+    <>
+      <div className="pt-20">
+        <InfiniteScrollGallery />
+      </div>
+      <main className="font-poppins pt-10 pb-6 mt-[-10px]">
+        <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+        <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+        <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+        <Banner />
+        <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+        <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+        <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
+      </main>
+    </>
+  );
+};
+
 function App() {
   const { darkMode } = useStore();
 
@@ -96,31 +115,15 @@ function App() {
         <div className="bg-gray-50 dark:bg-black min-h-screen">
           <Navbar />
           <Routes>
-            
+            <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
-          <div className="pt-20">
-  <InfiniteScrollGallery />
-</div>
-
-          <main className="font-poppins  pt-10 pb-6 mt-[-10px]">
-            <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
-            <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
-            <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
-            <Banner/>
-            <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
-            <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
-            <AudioGrid title="Featured Audiobooks & Podcasts" contents={sampleContents} />
-          </main>
-       
           <AudioPlayer />
-          <Footer/>
+          <Footer />
         </div>
       </div>
-      
     </Router>
-    
   );
 }
 
