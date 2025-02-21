@@ -12,7 +12,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-3 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[80%] 
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[80%] 
         bg-white/10 dark:bg-black/10 backdrop-blur-lg border border-gray-300/50 dark:border-gray-600/50 
         shadow-md rounded-full px-4 py-2 z-50 flex justify-between items-center">
         
@@ -56,26 +56,34 @@ export function Navbar() {
         </div>
 
         {/* Action Buttons */}
-                {/* Download App */}
-                <button className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-pink-700 
+        <div className="flex items-center space-x-3">
+          {/* Download App */}
+          <button className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-pink-700 
             text-white px-4 py-2 rounded-full shadow-md hover:scale-105 transition-all duration-300">
             <img src={PlayStore} alt="Play Store" className="h-6 w-6" />
             <span className="font-poppins font-semibold">Download</span>
           </button>
-        <div className="hidden md:flex items-center space-x-3">
+
+          {/* Free Trial */}
           <button className="px-4 py-2 bg-pink-600 text-white font-poppins font-semibold rounded-full shadow-md hover:bg-pink-700">
             Free Trial
           </button>
+
+          {/* Dark Mode Toggle */}
           <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
             {darkMode ? <Sun className="h-6 w-6 text-yellow-400" /> : <Moon className="h-6 w-6 text-gray-500 dark:text-white" />}
           </button>
+
+          {/* Show Login/Signup OR User Profile */}
           {user ? (
             <Link to="/profile">
               <img src={user.avatar_url || 'https://via.placeholder.com/32'} alt={user.full_name} className="h-9 w-9 rounded-full border-2 border-pink-500" />
             </Link>
           ) : (
-            <Link to="/signin" className="px-3 py-2 text-gray-800 dark:text-white font-medium rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-              <User className="h-6 w-6" />
+            <Link 
+              to="/signin" 
+              className="px-4 py-2 bg-gray-800 text-white font-poppins font-semibold rounded-full shadow-md hover:bg-gray-900">
+              Login / Signup
             </Link>
           )}
         </div>
@@ -96,6 +104,14 @@ export function Navbar() {
               <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
                 {darkMode ? <Sun className="h-6 w-6 text-yellow-400" /> : <Moon className="h-6 w-6 text-gray-500 dark:text-white" />}
               </button>
+              {/* Show Login/Signup in Sidebar */}
+              {!user && (
+                <Link 
+                  to="/signin" 
+                  className="px-4 py-2 bg-gray-800 text-white font-poppins font-semibold rounded-full shadow-md hover:bg-gray-900">
+                  Login / Signup
+                </Link>
+              )}
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@ export function SignUp() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`w-full p-2 border rounded focus:outline-none focus:ring-2 pr-10 ${darkMode ? "bg-gray-800 border-gray-600 text-white focus:ring-pink-500" : "bg-gray-800 border-gray-300 text-gray-900 focus:ring-pink-500"}`}
+              className={`w-full p-2 border rounded focus:outline-none focus:ring-2 pr-10 ${darkMode ? "bg-gray-800 border-gray-600 text-white focus:ring-pink-500" : "bg-gray-100 border-gray-300 text-gray-900 focus:ring-pink-500"}`}
               required
             />
             <button
